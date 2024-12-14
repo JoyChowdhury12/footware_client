@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "258688097869",
+    "project_id": "rapidapp-e663a",
+    "storage_bucket": "rapidapp-e663a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258688097869:android:e2dd36cd373a806067c604",
+        "android_client_info": {
+          "package_name": "com.example.footware_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-jb57UtIcGbNx-Wondw-o2MVVap6cBtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258688097869:android:42baa0cfbc89004867c604",
+        "android_client_info": {
+          "package_name": "com.example.footware_client"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-jb57UtIcGbNx-Wondw-o2MVVap6cBtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
