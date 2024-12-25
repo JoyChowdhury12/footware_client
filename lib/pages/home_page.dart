@@ -1,13 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:footware_client/pages/login_page.dart';
 import 'package:footware_client/pages/product_description_page.dart';
 import 'package:footware_client/widgets/drop_down_button.dart';
 import 'package:footware_client/widgets/multi_select_drop_down.dart';
 import 'package:footware_client/widgets/product_card.dart';
 import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +24,14 @@ class HomePage extends StatelessWidget {
           "Footwear Store",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Get.offAll(LoginPage());
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
       body: Column(
         children: [
