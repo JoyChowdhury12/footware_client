@@ -6,10 +6,11 @@ import 'package:footware_client/model/user.dart';
 import 'package:footware_client/pages/home_page.dart';
 import 'package:footware_client/pages/login_page.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginController extends GetxController {
   // FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FireBaseAuthService _auth = FireBaseAuthService();
   bool isSigning = false;
   // late CollectionReference userCollection;
@@ -92,5 +93,38 @@ class LoginController extends GetxController {
     } else {
       print("Some error happend!");
     }
+  }
+
+  signInWithGoogle() async {
+    final GoogleSignIn _googleSignIn = GoogleSignIn();
+
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
+
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleSignInAuthentication =
+            await googleSignInAccount.authentication;
+
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken,
+        );
+
+        await _firebaseAuth.signInWithCredential(credential);
+        Get.to(HomePage());
+        Get.snackbar("Login successful!", "Logged in successfully",
+            colorText: Colors.green);
+        update();
+      }
+    } catch (e) {
+      Get.snackbar("Something went wrong", "Please try again",
+          colorText: Colors.red);
+    }
+  }
+
+  void signOut() {
+    FirebaseAuth.instance.signOut();
+    User? user = FirebaseAuth.instance.currentUser;
   }
 }

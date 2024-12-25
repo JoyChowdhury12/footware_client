@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="footware_client"
+        android:label="Footwear client"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/foot_wear">
         <activity
             android:name=".MainActivity"
             android:exported="true"
