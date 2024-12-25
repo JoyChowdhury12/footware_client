@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
               Gap(20),
               TextField(
                 controller: ctrl.loginEmailController,
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -42,12 +42,12 @@ class LoginPage extends StatelessWidget {
               Gap(20),
               TextField(
                 controller: ctrl.loginPasswordController,
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    prefixIcon: Icon(Icons.phone_android),
+                    prefixIcon: Icon(Icons.password_outlined),
                     labelText: "Password",
                     hintText: "Enter your password"),
               ),

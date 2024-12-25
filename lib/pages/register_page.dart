@@ -42,7 +42,7 @@ class RegisterPage extends StatelessWidget {
               Gap(20),
               TextField(
                 controller: ctrl.registerPasswordController,
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),

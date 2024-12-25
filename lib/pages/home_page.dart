@@ -29,6 +29,8 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 FirebaseAuth.instance.signOut();
                 Get.offAll(LoginPage());
+                Get.snackbar("Logged successful!", "Logged out successfully",
+                    colorText: Colors.deepPurple);
               },
               icon: Icon(Icons.logout))
         ],

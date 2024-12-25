@@ -66,10 +66,11 @@ class LoginController extends GetxController {
     update();
 
     if (user != null) {
-      Get.snackbar("Registration successful!", "User is successfully created");
+      Get.snackbar("Registration successful!", "User is successfully created",
+          colorText: Colors.green);
       Get.to(LoginPage());
     } else {
-      Get.snackbar("Something went wrong", "Please try again");
+      print("Something went wrong");
     }
   }
 
@@ -85,7 +86,8 @@ class LoginController extends GetxController {
     update();
 
     if (user != null) {
-      print("User is successfully created");
+      Get.snackbar("Login successful!", "Logged in successfully",
+          colorText: Colors.green);
       Get.to(HomePage());
     } else {
       print("Some error happend!");
