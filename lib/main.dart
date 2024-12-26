@@ -4,6 +4,7 @@ import 'package:footware_client/binders/my_binding.dart';
 import 'package:footware_client/pages/login_page.dart';
 import 'package:footware_client/pages/register_page.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {

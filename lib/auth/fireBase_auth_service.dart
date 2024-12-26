@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FireBaseAuthService {
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<User?> signUpWithEmailAndPassword(
       String email, String password) async {
@@ -15,10 +15,10 @@ class FireBaseAuthService {
       if (e.code == "email-already-in-use") {
         Get.snackbar(
             "Registration failed", "The email address is already in use.",
-            colorText: Colors.red);
+            colorText: Colors.white, backgroundColor: Colors.red);
       } else {
         Get.snackbar("Something went wrong", "${e.code}",
-            colorText: Colors.red);
+            colorText: Colors.white, backgroundColor: Colors.red);
       }
     }
     return null;
@@ -33,10 +33,10 @@ class FireBaseAuthService {
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found" || e.code == "wrong-password") {
         Get.snackbar("Login failed", "Invalid email or password",
-            colorText: Colors.red);
+            colorText: Colors.white, backgroundColor: Colors.red);
       } else {
         Get.snackbar("Something went wrong", "${e.code}",
-            colorText: Colors.red);
+            colorText: Colors.white, backgroundColor: Colors.red);
       }
     }
     return null;

@@ -67,51 +67,47 @@ class LoginPage extends StatelessWidget {
                       child: Text("Login"),
                     ),
               Gap(5),
-              ctrl.isSigning
-                  ? CircularProgressIndicator(
-                      color: Colors.deepPurple,
-                    )
-                  : InkWell(
-                      onTap: () {
-                        ctrl.signInWithGoogle();
-                      },
-                      child: Container(
-                        height: 45,
-                        width: 215,
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                          borderRadius: BorderRadius.circular(18),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.2),
-                                blurRadius: 10,
-                                offset: Offset(0, 3),
-                                spreadRadius: 5),
-                          ],
-                        ),
-                        // child: ElevatedButton(
-                        //   style: ElevatedButton.styleFrom(
-                        //       foregroundColor: Colors.white,
-                        //       backgroundColor: Colors.deepPurple),
-                        //   onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.google,
-                              color: Colors.white,
-                            ),
-                            Gap(10),
-                            Text(
-                              "Sign in with Google",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                          ],
-                        ),
+
+              InkWell(
+                onTap: () {
+                  ctrl.signInWithGoogle();
+                },
+                child: Container(
+                  height: 45,
+                  width: 215,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.circular(18),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: Offset(0, 3),
+                          spreadRadius: 5),
+                    ],
+                  ),
+                  // child: ElevatedButton(
+                  //   style: ElevatedButton.styleFrom(
+                  //       foregroundColor: Colors.white,
+                  //       backgroundColor: Colors.deepPurple),
+                  //   onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.google,
+                        color: Colors.white,
                       ),
-                    ),
+                      Gap(10),
+                      Text(
+                        "Sign in with Google",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               Gap(5),
 
               // ),

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:footware_client/auth/fireBase_auth_service.dart';
-import 'package:footware_client/model/user.dart';
+import 'package:footware_client/model/user/user.dart';
 import 'package:footware_client/pages/home_page.dart';
 import 'package:footware_client/pages/login_page.dart';
 import 'package:get/get.dart';
@@ -13,6 +13,7 @@ class LoginController extends GetxController {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FireBaseAuthService _auth = FireBaseAuthService();
   bool isSigning = false;
+
   // late CollectionReference userCollection;
 
   TextEditingController registerEmailController = TextEditingController();
@@ -119,12 +120,7 @@ class LoginController extends GetxController {
       }
     } catch (e) {
       Get.snackbar("Something went wrong", "Please try again",
-          colorText: Colors.red);
+          colorText: Colors.white, backgroundColor: Colors.red);
     }
-  }
-
-  void signOut() {
-    FirebaseAuth.instance.signOut();
-    User? user = FirebaseAuth.instance.currentUser;
   }
 }

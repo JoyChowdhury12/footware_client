@@ -43,6 +43,7 @@ dependencies:
   fluttertoast: ^8.2.10
   font_awesome_flutter: ^10.8.0
   google_sign_in: ^6.2.2
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:
